@@ -1,21 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: zytest
   labels:
-    app: nginx
+    app: zytest
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: zytest
   template:
     metadata:
       labels:
-        app: nginx
+        app: zytest
     spec:
+      imagePullSecrets:
+        - name: acr-secret   # 上面创建的secret名称
       containers:
-        - name: nginx
+        - name: zytest
           image: crpi-vyt22uhlh2w61g5u.cn-shanghai.personal.cr.aliyuncs.com/nmgkds/myrepo:master-5604a6c
           ports:
             - containerPort: 80
