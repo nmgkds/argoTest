@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.21
-        ports:
-        - containerPort: 80
+        - name: nginx
+          image: crpi-vyt22uhlh2w61g5u.cn-shanghai.personal.cr.aliyuncs.com/nmgkds/myrepo:master-5604a6c
+          ports:
+            - containerPort: 80
